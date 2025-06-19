@@ -13,9 +13,8 @@ document.getElementById('login-form').addEventListener('submit', async function 
         });
 
         if (response.ok) {
-            const result = await response.text(); // Parse the backend response
-            alert(result); // Show success message from the backend
-        } else {
+            window.location.href = '../HTML/welcome.html'; // Replace with your actual welcome page URL
+        }  else {
             alert('Invalid credentials. Try again!');
         }
     } catch (error) {

@@ -41,18 +41,20 @@ body {
 }
 
 .trending-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    display: inline-flex; /* Items in a row */
+    gap: 20px; /* Add spacing between items */
+    padding: 10px;
 }
 
 .trending-item {
-    background: #fff;
+    flex: 0 0 auto; /* Prevent items from shrinking or growing */
+    width: 200px; /* Fixed width for consistent layout */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .trending-item img {
@@ -64,11 +66,16 @@ body {
 .trending-item p {
     margin: 10px;
     font-size: 1em;
-    text-align: center;
     color: #333;
 }
 
 .trending-item:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+.trending-scroll-container {
+    scroll-behavior: smooth;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 10px 0; /* Add some padding for better spacing */
+    border: 1px solid #d926a9; /* Optional: Add a border for visual clarity */
 }
